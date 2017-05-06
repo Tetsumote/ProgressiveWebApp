@@ -20,8 +20,8 @@ var	environment = 'production';
 gulp.task('js',function(){
 	return gulp.src(src + '/js/app.js')
 	
-	//.pipe(browserify())
-	//.pipe(gulpif(environment === 'production',uglify()))
+	.pipe(browserify())
+	.pipe(gulpif(environment === 'production',uglify()))
 	.on('error',function(err){
 		console.error('error!',err.message);
 	})
