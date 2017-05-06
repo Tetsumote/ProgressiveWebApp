@@ -1,0 +1,22 @@
+{
+  "name": "progressivewebapp",
+  "version": "0.0.1",
+  "description": "Template for Progressive Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tetsumote/ProgressiveWebApp.git"
+  },
+  "keywords": [
+    "bootstrap"
+  ],
+  "author": "Paul Grajewski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tetsumote/ProgressiveWebApp/issues"
+  },
+  "homepage": "https://github.com/Tetsumote/ProgressiveWebApp#readme"
+}
