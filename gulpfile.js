@@ -19,8 +19,9 @@ var	environment = 'production';
 
 gulp.task('js',function(){
 	return gulp.src(src + '/js/app.js')
-	.pipe(browserify())
-	.pipe(gulpif(environment === 'production',uglify()))
+	
+	//.pipe(browserify())
+	//.pipe(gulpif(environment === 'production',uglify()))
 	.on('error',function(err){
 		console.error('error!',err.message);
 	})
@@ -37,12 +38,12 @@ gulp.task('css',function(){
 });
 
 gulp.task('watch',function(){
-	gulp.watch([src + '/js/**/*']);
-	gulp.watch(src + '/css/*.css');
-	gulp.watch(dest + '/*.html');
+	gulp.watch(src + '/js/**/*.js',['js']);
+	gulp.watch(src + '/css/*.css',['css']);
+	gulp.watch(dest + '/*.html',['html']);
 });
 
-gulp.task('webserver',function(){
+gulp.task('webserver',['html', 'css', 'js'],function(){
 	gulp.src(dest)
 	.pipe(webserver({
 		livereload:true,
