@@ -18,5 +18,19 @@
   "bugs": {
     "url": "https://github.com/Tetsumote/ProgressiveWebApp/issues"
   },
-  "homepage": "https://github.com/Tetsumote/ProgressiveWebApp#readme"
+  "homepage": "https://github.com/Tetsumote/ProgressiveWebApp#readme",
+  "devDependencies": {
+    "browserify": "^14.3.0",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-css": "^3.0.4",
+    "gulp-concat-css": "^2.3.0",
+    "gulp-if": "^2.0.2",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-util": "^3.0.8",
+    "gulp-webserver": "^0.9.1",
+    "jquery": "^3.2.1",
+    "sw-precache": "^5.1.1"
+  }
 }
