@@ -42,8 +42,11 @@
 	<div class="carousel fade" data-ride="carousel" id="slideshow">
 	<div class="carousel-inner">
 		{{#each slideshow}}
-		<div class="item active"><img src="images/pets/.jpg" alt=""></div>
-		<div class="item"><img src="images/pets/.jpg"></div>
+		{{#if @first}}
+		<div class="item active"><img src="images/pets/{{filename}}.jpg" alt="{{pet}} photo"></div>
+		{{else}}
+		<div class="item"><img src="images/pets/{{filename}}.jpg" alt="{{pet}} photo"></div>
+		{{/if}}
 		{{/each}}
 		</div><!-- carousel inner  -->
 		<a class="left carousel-control" href="#slideshow" role="button" data-slide="prev"></a>
@@ -57,6 +60,29 @@
 	<div class="row">
 		<h2 class="page-headline">Adoptions</h2>
 		<p>These loving and deserving pets need a home. Please help us find a place for them. Click on their photo for more information.</p>
+		<script id="adoption-template" type="text/x-handlebars-template">
+		{{#each adoption}}
+		<div class="col-md-2 col-sm-3 col-xs-4 openpetmodal" data-toggle="modal" data-target="#adoption{{filename}}">
+			<img class="img-circle" src="images/pets/{{filename}}_tn.jpg" alt="{{pet}} photo"/>
+		</div><!-- column -->
+		<div class="modal fade" id="adoption{{filename}}" tabindex="-1" role="dialog" aria-labelledby="petModal">
+		<div class="modal-dialog" data-dismiss="modal" aria-label="Close" role="document">
+		<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" arial-label="Close" role="document"><span aria-hidden="true">&times;</span></button><!-- close button -->
+			<h2 class="modal-title modal-petname">{{pet}}</h2>
+			<div class="modal-petbreed">{{breed}}</div>
+			</div><!-- modal-header -->
+			<div class="modal-body">
+			<img class="img-responsive modal-petimage" src="images/pets/{{filename}}_tn.jpg" alt="{{Pet}} photo"/>
+			<p class="modal-petinfo">{{description}}</p>
+			</div><!-- modal body -->
+			</div><!-- modal content -->
+			</div><!-- modal dialog -->
+		</div><!-- modal fade -->
+		{{/each}}
+		</script>
+		<div id="adoption-content"></div>
 		</div><!-- row -->
 	</div><!-- page-adoption -->
 	<div class="page container-fluid" id="appointments">
